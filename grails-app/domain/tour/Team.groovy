@@ -9,7 +9,7 @@ class Team {
     }
 
     static constraints = {
-        description nullable: true
+        description nullable: true, widget: 'textArea'
     }
 
     static hasMany = [riders: Rider]
