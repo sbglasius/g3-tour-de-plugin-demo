@@ -1,0 +1,1 @@
+<g:textArea name="${property}" class="form-control">${value}</g:textArea>

@@ -13,7 +13,7 @@ info:
         grailsVersion: '@info.app.grailsVersion@'
 spring:
     main:
-        banner-mode: "off"
+        banner-mode: "on"
     groovy:
         template:
             check-template-location: false
@@ -135,3 +135,9 @@ grails:
       - yyyy/MM/dd
       - yyyy-MM-dd HH:mm:ss.S
       - yyyy-MM-dd'T'HH:mm:ss'Z'
+
+---
+grails:
+  plugin:
+    fields:
+      disableLookupCache: true
