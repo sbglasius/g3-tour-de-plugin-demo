@@ -9,6 +9,9 @@ buildscript {
         classpath "org.grails.plugins:hibernate5:6.0.4"
     }
 }
+plugins {
+    id 'com.craigburke.client-dependencies' version '1.3.1'
+}
 
 version "0.1"
 group "tour.de.plugin.demo"
@@ -55,11 +58,15 @@ dependencies {
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
 }
 
-bootRun {
-    jvmArgs = ['-Dspring.output.ansi.enabled=always']
-}
 
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+clientDependencies {
+    bower {
+        'jquery'('1.11.2')
+        'bootstrap'('3.3.6')
+    }
 }
