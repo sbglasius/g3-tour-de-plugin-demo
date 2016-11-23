@@ -141,3 +141,8 @@ grails:
   plugin:
     fields:
       disableLookupCache: true
+---
+grails:
+  config:
+     locations:
+      - ~/.grails/external-config.groovy
