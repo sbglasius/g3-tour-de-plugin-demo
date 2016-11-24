@@ -58,6 +58,7 @@ dependencies {
     compile 'desirableobjects.grails.plugins:grails-sendgrid:2.0.1'
     compile 'org.grails.plugins:i18n-enums:2.0.2'
     compile 'com.agileorbit:schwartz:1.0.0'
+    compile 'org.grails.plugins:spring-security-core:3.1.1'
 
     console "org.grails:grails-console"
     profile "org.grails.profiles:web"
