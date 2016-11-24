@@ -1,8 +1,10 @@
 package tour
 
+import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.Validateable
 import org.grails.core.util.StopWatch
 
+@Secured(['ROLE_ADMIN'])
 class DemoController {
     def externalService
     def sendGridService
