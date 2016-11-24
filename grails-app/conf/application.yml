@@ -146,3 +146,4 @@ grails:
   config:
      locations:
       - ~/.grails/external-config.groovy
+      - ~/.grails/demo-secrets.yml
