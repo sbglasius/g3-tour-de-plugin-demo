@@ -147,3 +147,10 @@ grails:
      locations:
       - ~/.grails/external-config.groovy
       - ~/.grails/demo-secrets.yml
+---
+grails:
+    plugin:
+        i18nEnum:
+            postfix: label
+            shortName: true
+            defaultNameCase: ALL_CAPS

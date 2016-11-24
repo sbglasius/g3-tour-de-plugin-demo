@@ -27,6 +27,7 @@ apply plugin:"asset-pipeline"
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url "http://dl.bintray.com/sbglasius/plugins" }
 }
 
 dependencyManagement {
@@ -53,6 +54,7 @@ dependencies {
     compile "org.grails.plugins:mail:2.0.0.RC6"
     compile 'org.grails.plugins:greenmail:2.0.0.RC2'
     compile 'desirableobjects.grails.plugins:grails-sendgrid:2.0.1'
+    compile 'org.grails.plugins:i18n-enums:2.0.2'
 
     console "org.grails:grails-console"
     profile "org.grails.profiles:web"

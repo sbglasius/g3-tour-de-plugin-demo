@@ -5,6 +5,7 @@ class Rider {
     String image
     Integer weight
     Date born
+    Speciality speciality
 
     String toString() {
         name
@@ -12,6 +13,7 @@ class Rider {
 
     static constraints = {
         weight nullable: true
+        speciality nullable: true
     }
 
     static belongsTo = [team: Team]
