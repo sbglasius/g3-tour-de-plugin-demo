@@ -1,5 +1,6 @@
 package tour
 
+import grails.validation.Validateable
 import org.grails.core.util.StopWatch
 
 class DemoController {
@@ -28,5 +29,31 @@ class DemoController {
         externalService.evictAll()
         flash.message = 'Evicted all'
         redirect(action: 'search')
+    }
+
+    def mail(MailCommand mailCommand) {
+        if(!mailCommand.hasErrors() && request.method == 'POST') {
+            sendMail {
+                to mailCommand.to
+                subject mailCommand.subject
+                text mailCommand.text
+            }
+            flash.message = "Sent mail to $mailCommand.to"
+        } else {
+            mailCommand.clearErrors()
+        }
+        [mailCommand: mailCommand]
+    }
+}
+
+class MailCommand implements Validateable {
+    String to
+    String subject
+    String text
+
+    static constraints = {
+        to email: true
+        subject nullable: false
+        text nullable: false, widget: 'textArea'
     }
 }
