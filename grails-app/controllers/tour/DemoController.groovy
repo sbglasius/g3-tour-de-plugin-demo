@@ -5,7 +5,7 @@ import org.grails.core.util.StopWatch
 
 class DemoController {
     def externalService
-
+    def sendGridService
     static defaultAction = "search"
 
     def search(String query) {
@@ -37,6 +37,21 @@ class DemoController {
                 to mailCommand.to
                 subject mailCommand.subject
                 text mailCommand.text
+            }
+            flash.message = "Sent mail to $mailCommand.to"
+        } else {
+            mailCommand.clearErrors()
+        }
+        [mailCommand: mailCommand]
+    }
+
+    def sendgrid(MailCommand mailCommand) {
+        if (!mailCommand.hasErrors() && request.method == 'POST') {
+            sendGridService.sendMail {
+                from "demo1@gr8conf.org"
+                to mailCommand.to
+                subject mailCommand.subject
+                body mailCommand.text
             }
             flash.message = "Sent mail to $mailCommand.to"
         } else {
